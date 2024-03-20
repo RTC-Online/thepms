@@ -7,21 +7,20 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
-class TicketType extends Model
+class LanguageType extends Model
 {
     use HasFactory;
 
     protected $fillable = [
         'user_id',
-        'name',
-        'description'
+        'name'
     ];
 
-    public function owner(): BelongsTo{
+    public function owner(): BelongsTo {
         return $this->belongsTo(User::class);
     }
 
-    public function tickets(): BelongsToMany{
-        return $this->belongsToMany(Ticket::class);
+    public function languages(): BelongsToMany {
+        return $this->belongsToMany(Language::class);
     }
 }

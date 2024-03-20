@@ -12,11 +12,16 @@ class Project extends Model
     use HasFactory;
 
     protected $fillable = [
+        'user_id', //integer
         'customer_id', //integer
         'project_status_id', //integer
         'title', //string
         'description' //text
     ];
+
+    public function owner(): BelongsTo {
+        return $this->belongsTo(User::class);
+    }
 
     public function customer(): BelongsTo {
         return $this->belongsTo(Customer::class);
