@@ -13,12 +13,13 @@ return new class extends Migration
     {
         Schema::create('tickets', function (Blueprint $table) {
             $table->id();
+            $table->integer('user_id');
             $table->integer('project_id');
             $table->integer('ticket_type_id');
             $table->integer('ticket_category_id');
             $table->integer('ticket_status_id');
             $table->text('description');
-            $table->timestamps('deadline');
+            $table->timestamp('deadline');
             $table->string('difficulty');
             $table->string('priority');
             $table->integer('assigne_id');

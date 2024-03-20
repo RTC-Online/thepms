@@ -13,6 +13,7 @@ class Ticket extends Model
 
     protected $fillable = [
         'title',//string
+        'user_id', //integer
         'project_id', //integer
         'ticket_type_id', //ticket_type_id  als integer
         'ticket_category_id',//ticket_category_id  als integer
