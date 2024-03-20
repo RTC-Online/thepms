@@ -12,10 +12,10 @@ class Project extends Model
     use HasFactory;
 
     protected $fillable = [
-        'customer_id',
-        'project_status_id',
-        'title',
-        'description'
+        'customer_id', //integer
+        'project_status_id', //integer
+        'title', //string
+        'description' //text
     ];
 
     public function customer(): BelongsTo {

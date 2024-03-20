@@ -11,9 +11,14 @@ class TimeCategory extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name',
-        'description'
+        'user_id', //integer
+        'name', //string
+        'description' //text
     ];
+
+    public function owner(){
+        return $this->belongsTo(User::class);
+    }
 
     public function bookings(): BelongsToMany
     {

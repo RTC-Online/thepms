@@ -10,7 +10,16 @@ class ProjectWiki extends Model
 {
     use HasFactory;
 
-    protected $fillable = [];
+    protected $fillable = [
+        'user_id', //integer
+        'project_id', //integer
+        'title', //string
+        'content' //text
+    ];
+
+    public function owner(): BelongsTo {
+        return $this->belongsTo(User::class);
+    }
 
     public function project(): BelongsTo {
         return $this->belongsTo(Project::class);

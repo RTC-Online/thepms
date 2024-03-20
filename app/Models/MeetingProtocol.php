@@ -10,7 +10,15 @@ class MeetingProtocol extends Model
 {
     use HasFactory;
 
-    protected $fillable = [];
+    protected $fillable = [
+        'meeting_id', //integer
+        'headline', //string
+        'protocol_text', //text
+        'starts_at', //timestamp
+        'ends_at', //timestamp
+        'started', //boolean mit ->default(false) hinten dran
+        'finished' //boolean mit ->default(false) hinten dran
+    ];
 
     public function meeting(): BelongsTo
     {

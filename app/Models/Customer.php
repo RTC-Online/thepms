@@ -4,26 +4,32 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Customer extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'company_id',
-        'firstname',
-        'middlenames',
-        'lastname',
-        'email',
-        'street',
-        'housenumber',
-        'postcode',
-        'city',
-        'state',
-        'country'
+        'user_id', //integer
+        'company_id', //integer
+        'firstname', //string
+        'middlenames', //string
+        'lastname', //string
+        'email', //string
+        'street', //string
+        'housenumber', //string
+        'postcode', //string
+        'city', //string
+        'state', //string
+        'country' //string
     ];
 
-    public function company(){
+    public function owner(): BelongsTo {
+        return $this->belongsTo(User::class);
+    }
+
+    public function company(): BelongsTo {
         return $this->belongsTo(Company::class);
     }
 }

@@ -10,9 +10,15 @@ class ProjectStatus extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name',
-        'description'
+        'project_id', //integer
+        'user_id', //integer
+        'name', //string
+        'description' //text
     ];
+
+    public function owner(){
+        return $this->belongsTo(User::class);
+    }
 
     public function project(){
         return $this->belongsTo(ProjectStatus::class);

@@ -11,14 +11,14 @@ class TimeBooking extends Model
     use HasFactory;
 
    protected $fillable = [
-       'user_id',
-       'ticket_id',
-       'category_id',
-       'hours',
-       'comment'
+       'user_id', //integer
+       'ticket_id', //integer
+       'category_id', //integer
+       'hours', //float
+       'comment' //string
    ];
 
-    public function user(): BelongsTo{
+    public function owner(): BelongsTo{
         return $this->belongsTo(User::class);
     }
 
