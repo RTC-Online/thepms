@@ -21,6 +21,10 @@ class MeetingProtocol extends Model
         'finished' //boolean mit ->default(false) hinten dran
     ];
 
+    ##############################
+    ###   Eloquent Relations   ###
+    ##############################
+
     public function owner(): BelongsTo {
         return $this->belongsTo(User::class);
     }

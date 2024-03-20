@@ -23,6 +23,10 @@ class Company extends Model
         'suspended' //boolean mit ->default(false) hinten dran
     ];
 
+    ##############################
+    ###   Eloquent Relations   ###
+    ##############################
+
     public function owner(): BelongsTo {
         return $this->belongsTo(User::class);
     }

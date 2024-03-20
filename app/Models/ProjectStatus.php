@@ -16,6 +16,10 @@ class ProjectStatus extends Model
         'description' //text
     ];
 
+    ##############################
+    ###   Eloquent Relations   ###
+    ##############################
+
     public function owner(){
         return $this->belongsTo(User::class);
     }

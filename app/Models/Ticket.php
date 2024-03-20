@@ -30,6 +30,10 @@ class Ticket extends Model
         'members'//nicht in die migration mitnehmen
     ];
 
+    ##############################
+    ###   Eloquent Relations   ###
+    ##############################
+
     public function owner(){
         return $this->belongsTo(User::class);
     }

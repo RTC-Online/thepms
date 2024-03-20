@@ -17,6 +17,10 @@ class TicketType extends Model
         'description'
     ];
 
+    ##############################
+    ###   Eloquent Relations   ###
+    ##############################
+
     public function owner(): BelongsTo{
         return $this->belongsTo(User::class);
     }

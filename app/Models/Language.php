@@ -20,6 +20,10 @@ class Language extends Model
         'set3',
     ];
 
+    ##############################
+    ###   Eloquent Relations   ###
+    ##############################
+
     public function owner(): BelongsTo {
         return $this->belongsTo(User::class);
     }

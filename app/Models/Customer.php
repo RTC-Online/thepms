@@ -25,6 +25,10 @@ class Customer extends Model
         'country' //string
     ];
 
+    ##############################
+    ###   Eloquent Relations   ###
+    ##############################
+
     public function owner(): BelongsTo {
         return $this->belongsTo(User::class);
     }

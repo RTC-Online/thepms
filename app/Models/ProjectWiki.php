@@ -17,6 +17,10 @@ class ProjectWiki extends Model
         'content' //text
     ];
 
+    ##############################
+    ###   Eloquent Relations   ###
+    ##############################
+
     public function owner(): BelongsTo {
         return $this->belongsTo(User::class);
     }

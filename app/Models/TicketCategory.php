@@ -15,6 +15,10 @@ class TicketCategory extends Model
         'description'
     ];
 
+    ##############################
+    ###   Eloquent Relations   ###
+    ##############################
+
     public function owner(){
         return $this->belongsTo(User::class);
     }

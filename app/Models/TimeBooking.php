@@ -10,13 +10,17 @@ class TimeBooking extends Model
 {
     use HasFactory;
 
-   protected $fillable = [
+    protected $fillable = [
        'user_id', //integer
        'ticket_id', //integer
        'category_id', //integer
        'hours', //float
        'comment' //string
-   ];
+    ];
+
+    ##############################
+    ###   Eloquent Relations   ###
+    ##############################
 
     public function owner(): BelongsTo{
         return $this->belongsTo(User::class);

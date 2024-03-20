@@ -17,6 +17,10 @@ class TicketStatus extends Model
         'color'
     ];
 
+    ##############################
+    ###   Eloquent Relations   ###
+    ##############################
+
     public function owner(): BelongsTo{
         return $this->belongsTo(User::class);
     }

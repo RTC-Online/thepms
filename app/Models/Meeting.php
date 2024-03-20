@@ -23,6 +23,10 @@ class Meeting extends Model
         'ended', //boolean mit ->default(false) hinten dran
     ];
 
+    ##############################
+    ###   Eloquent Relations   ###
+    ##############################
+
     public function owner(): BelongsTo {
         return $this->belongsTo(User::class);
     }

@@ -16,6 +16,10 @@ class LanguageType extends Model
         'name'
     ];
 
+    ##############################
+    ###   Eloquent Relations   ###
+    ##############################
+
     public function owner(): BelongsTo {
         return $this->belongsTo(User::class);
     }
