@@ -13,6 +13,14 @@ return new class extends Migration
     {
         Schema::create('meeting_protocols', function (Blueprint $table) {
             $table->id();
+            $table->integer('user_id');
+            $table->integer('meeting_id');
+            $table->string('headline');
+            $table->text('protocol_text');
+            $table->timestamp('starts_at');
+            $table->timestamp('ends_at');
+            $table->boolean('started')->default(false);
+            $table->boolean('finished')->default(false);
             $table->timestamps();
         });
     }
