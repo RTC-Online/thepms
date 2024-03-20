@@ -13,17 +13,19 @@ class Ticket extends Model
 
     protected $fillable = [
         'title',//string
-        'type', //ticket_type_id
-        'category',//ticket_category_id
-        'status',//ticket_status_id
+        'ticket_type_id', //ticket_type_id  als integer
+        'ticket_category_id',//ticket_category_id  als integer
+        'ticket_status_id',//ticket_status_id  als integer
         'description',//text
         'deadline',//timestamp
         'difficulty',//string
         'priority',//string
-        'asignee',//assigne_id
+        'assigne_id',//assigne_id als integer
         'guess_effort',//float
         'calc_effort',//float
-        'leader',//leader_id
+        'leader_id',//leader_id als integer
+        'activated',//boolean
+        'suspended',//boolean
         'members'//nicht in die migration mitnehmen
     ];
 
