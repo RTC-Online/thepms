@@ -13,6 +13,15 @@ return new class extends Migration
     {
         Schema::create('meetings', function (Blueprint $table) {
             $table->id();
+            $table->integer('meeting_protocol_id');
+            $table->integer('user_id');
+            $table->string('title');
+            $table->text('description');
+            $table->text('agenda');
+            $table->timestamp('starts_at');
+            $table->timestamp('ends_at');
+            $table->boolean('started')->default(false);
+            $table->boolean('ended')->default(false);
             $table->timestamps();
         });
     }
