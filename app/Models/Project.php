@@ -4,20 +4,37 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Project extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-
+        'customer_id',
+        'project_status_id',
+        'title',
+        'description'
     ];
 
-    public function tickets(){
+    public function customer(): BelongsTo {
+        return $this->belongsTo(Customer::class);
+    }
+
+    public function status(): BelongsTo {
+        return $this->belongsTo(ProjectStatus::class);
+    }
+
+    public function tickets(): HasMany {
         return $this->hasMany(Ticket::class);
     }
 
-    public function meetings(){
+    public function meetings(): HasMany {
         return $this->hasMany(Meeting::class);
+    }
+
+    public function wikis(): HasMany{
+        return $this->hasMany(ProjectWiki::class);
     }
 }

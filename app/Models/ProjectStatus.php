@@ -2,11 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class TimeCategory extends Model
+class ProjectStatus extends Model
 {
     use HasFactory;
 
@@ -15,8 +14,7 @@ class TimeCategory extends Model
         'description'
     ];
 
-    public function bookings(): BelongsToMany
-    {
-        return $this->belongsToMany(TimeBooking::class);
+    public function project(){
+        return $this->belongsTo(ProjectStatus::class);
     }
 }

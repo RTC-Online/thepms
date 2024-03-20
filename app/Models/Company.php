@@ -5,15 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Customer extends Model
+class Company extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'company_id',
-        'firstname',
-        'middlenames',
-        'lastname',
+        'customer_id',
         'email',
         'street',
         'housenumber',
@@ -23,7 +20,7 @@ class Customer extends Model
         'country'
     ];
 
-    public function company(){
-        return $this->belongsTo(Company::class);
+    public function customer(){
+        return $this->belongsTo(Customer::class);
     }
 }

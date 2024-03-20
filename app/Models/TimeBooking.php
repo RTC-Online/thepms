@@ -10,7 +10,13 @@ class TimeBooking extends Model
 {
     use HasFactory;
 
-   protected $fillable = [];
+   protected $fillable = [
+       'user_id',
+       'ticket_id',
+       'category_id',
+       'hours',
+       'comment'
+   ];
 
     public function user(): BelongsTo{
         return $this->belongsTo(User::class);
@@ -21,6 +27,6 @@ class TimeBooking extends Model
     }
 
     public function category(): BelongsTo{
-        return $this->belongsTo(TimeCategory::class);
+        return $this->belongsTo(TimeCategory::class, 'category_id');
     }
 }
